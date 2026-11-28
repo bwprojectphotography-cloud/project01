@@ -1399,7 +1399,13 @@
       --shadow: rgba(0, 0, 0, .6);
     }
     html { color-scheme: dark; background: #101011; }
-    body { background: var(--paper); color: var(--ink); }
+    /* Body itself stays transparent so the fixed dot field shows
+       through: the canvas sits at z-index -1, which paints above the
+       html background but below body's own background — an opaque
+       body background here covers the canvas and hides every dot.
+       The page colour comes from the html background above, which
+       matches --paper exactly. */
+    body { background: transparent; color: var(--ink); }
     .btn { background: var(--ink); color: #101011; border-color: var(--ink); }
     .btn:hover, .btn:focus-visible { background: var(--accent); border-color: var(--accent); color: #ffffff; }
     .btn.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
