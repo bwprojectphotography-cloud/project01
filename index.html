@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
-  <title>Project.01 — Video Advertising & Marketing for Chicago Small Businesses & Real Estate</title>
+  <title>Project.01 — Video, Photo & Websites for Chicago Small Businesses & Real Estate</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -891,7 +891,7 @@
     .wordmark .sub { color: var(--muted); font-weight: 500; }
     .topbar-right { display: flex; align-items: center; gap: 30px; }
     .hero > div:first-child::before {
-      content: "CHICAGO — ADVERTISING + MARKETING";
+      content: "CHICAGO — VIDEO / PHOTO / WEB";
       color: var(--muted);
     }
     .hero h1,
@@ -1423,6 +1423,17 @@
     /* Portfolio page title in the site accent color */
     #portfolio-title { color: var(--accent); }
   </style>
+  <style>
+    /* Three services — video, photo, web — in an even row on wide
+       screens; the third spans the row in the mid range so the grid
+       never sits uneven, and everything stacks on phones. */
+    @media (min-width: 1021px) {
+      .service-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 821px) and (max-width: 1020px) {
+      .service-grid .service:last-child { grid-column: 1 / -1; }
+    }
+  </style>
 </head>
 <body>
   <canvas id="dot-field" aria-hidden="true"></canvas>
@@ -1443,10 +1454,10 @@
     <div id="page-home">
     <section class="wrap hero" aria-labelledby="hero-title">
       <div>
-        <h1 id="hero-title">Video advertising.<br><em>Small business marketing.</em></h1>
+        <h1 id="hero-title">Video, photo &amp; web.<br><em>Handled for you.</em></h1>
       </div>
       <div class="hero-copy">
-        <p>Short-form ad video and marketing content for independent businesses and real estate teams across Chicago — built to get you seen, saved and shared.</p>
+        <p>Video, photography and websites for independent businesses and real estate teams across Chicago — planned, shot, built and delivered. You hand off the creative and get back to running the business.</p>
         <div class="cta-row">
           <a class="btn" href="#services">View services <span aria-hidden="true">↓</span></a>
           <a class="btn secondary" href="#contact">Get in touch</a>
@@ -1472,20 +1483,20 @@
     <section class="wrap section" id="services" aria-labelledby="services-title">
       <div class="section-head">
         <div class="section-index">Services / 02</div>
-        <h2 id="services-title">Advertising leads. Media delivers.</h2>
+        <h2 id="services-title">Hand off the creative work.</h2>
       </div>
       <div class="service-grid">
         <article class="service">
           <span class="frame frame-32 service-photo"><img src="assets/video-camera-with-a-shotgun-microphone-mounted-on-a-tripod.jpg" alt="Video camera with a shotgun microphone mounted on a tripod" width="1600" height="1067" loading="lazy" /></span>
-          <div class="service-number">ADVERTISING / 01</div>
+          <div class="service-number">VIDEO / 01</div>
 
           <div class="service-bottom">
-            <h3>Video media advertising</h3>
-            <p>Short-form ad video and campaign creative that puts your business — a product, a menu, an offer, a listing — in front of the right local customers.</p>
+            <h3>Video</h3>
+            <p>Short-form video that puts your business — a product, a menu, an offer, a listing — in front of the right local customers.</p>
             <ul class="service-details">
               <li>Vertical ad video for Instagram, TikTok and paid social</li>
               <li>Product, menu and offer promo videos</li>
-              <li>Listing launch and open-house campaign creative</li>
+              <li>Listing walkthroughs and vertical agent reels</li>
               <li>Brand spots for owners, shops and agents</li>
             </ul>
             <p class="service-fit">For small businesses, independent owners and real estate teams</p>
@@ -1494,17 +1505,35 @@
 
         <article class="service">
           <span class="frame frame-32 service-photo"><img src="assets/living-room-with-a-gray-sofa-against-a-mustard-accent-wall.jpg" alt="Living room with a gray sofa against a mustard accent wall" width="1600" height="1067" loading="lazy" /></span>
-          <div class="service-number">REAL ESTATE MEDIA / 02</div>
+          <div class="service-number">PHOTO / 02</div>
 
           <div class="service-bottom">
-            <h3>Real estate photo + video</h3>
-            <p>The production side of the marketing: complete property coverage that gives every campaign something worth advertising.</p>
+            <h3>Photography</h3>
+            <p>Photography that shows your business — or your listing — at its best, ready for your website, your listings and your socials.</p>
             <ul class="service-details">
               <li>MLS-ready listing photography</li>
-              <li>Video walkthroughs and vertical agent reels</li>
+              <li>Product and menu photography</li>
+              <li>Storefront, space and team photos</li>
               <li>Room, feature and detail coverage</li>
             </ul>
-            <p class="service-fit">For listings, landlords and property teams</p>
+            <p class="service-fit">For listings, shops, restaurants and local services</p>
+          </div>
+        </article>
+
+        <article class="service">
+          <span class="frame frame-32 service-photo"><img src="assets/screenshot-of-the-guadalupe-clean-co-website-designed-and-built-by-project-01.jpg" alt="Screenshot of the Guadalupe Clean Co website, designed and built by Project.01" width="1905" height="870" loading="lazy" style="object-position: top center" /></span>
+          <div class="service-number">WEB / 03</div>
+
+          <div class="service-bottom">
+            <h3>Website creation</h3>
+            <p>A website designed and built for you — pages, photos, copy and all — so your business looks as good online as it does in person.</p>
+            <ul class="service-details">
+              <li>Design and build for small business websites</li>
+              <li>Photography and copy included</li>
+              <li>Booking, menu and contact pages</li>
+              <li>Mobile-friendly and ready to share</li>
+            </ul>
+            <p class="service-fit">For businesses that need a site — or a better one</p>
           </div>
         </article>
       </div>
@@ -1535,11 +1564,11 @@
       <div class="wrap section about-body">
       <div class="about-grid">
         <div class="about-copy">
-          <p>I run Project.01, a one-person studio making video advertising and photo + video for Chicago's small businesses and real estate listings.</p>
+          <p>I run Project.01, a one-person studio making video, photography and websites for Chicago's small businesses and real estate listings — the creative work owners hand off so they can focus on the business itself.</p>
           <p>Marketing is my day job and my background. I'm a Business Development Representative at Groupon, where I work with local beauty and wellness businesses — building their campaigns, structuring their deals, negotiating pricing, and getting them live and selling. In Q3 2026, I drove $69,322 in gross profit across 52 merchants launched — at that pace, over $277,000 a year for small businesses through Groupon. I know what makes a local offer actually sell, because I build offers for a living.</p>
           <p>Before Groupon, I worked in Chicago real estate as a leasing agent — at Fulton Grace Realty and at Becovic Management Group. I showed apartments across the city, worked with landlords and renters, and learned what actually makes a place lease: the light, the layout, the first photo. That's what I bring to real estate media now. I shoot listings the way a leasing agent sees them, because I've been the one standing in the unit with the renter.</p>
           <p>Photography is the other half. I've been shooting for about ten years — street photography, mostly, under B.W.PROJECT — and I published my first photography book, <em>Apollo</em>. My current book, <em>In Between</em>, is in progress.</p>
-          <p>Project.01 is where the two meet: marketing that knows how to sell, and photography that knows how to see. Real estate photo + video, product, and short-form advertising for shops, salons, restaurants, and local services — made to move, not just to look good.</p>
+          <p>Project.01 is where the two meet: marketing that knows how to sell, and photography that knows how to see. Video, photo and websites for shops, salons, restaurants, real estate and local services — hand me the creative, and get back to running your business.</p>
           <div class="about-contact">
             <a href="mailto:bwprojectphotography@gmail.com" target="_blank" rel="noopener">bwprojectphotography@gmail.com</a>
             <a href="tel:+18478926113">(847) 892-6113</a>
@@ -1578,7 +1607,7 @@
           <li class="project-tile">
             <div class="tile-visual tile-visual--guadalupe">
               <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><em>guadalupe-clean-co</em></div>
-              <img class="guad-screenshot" src="assets/screenshot-of-the-guadalupe-clean-co-website-homepage-a-home-that-sparkles-over-a-pink-picnic-gingham-background-with-the-call-button-and-flat-rate-prices-button.jpg" alt="Screenshot of the Guadalupe Clean Co website homepage — “A home that sparkles” over a pink picnic gingham background, with the call button and flat-rate prices button" width="1905" height="870" loading="lazy">
+              <img class="guad-screenshot" src="assets/screenshot-of-the-guadalupe-clean-co-website-designed-and-built-by-project-01.jpg" alt="Screenshot of the Guadalupe Clean Co website homepage — “A home that sparkles” over a pink picnic gingham background, with the call button and flat-rate prices button" width="1905" height="870" loading="lazy">
             </div>
             <div class="tile-body">
               <div class="tile-meta"><span>Website</span><span class="tile-status">Live</span></div>
@@ -1628,8 +1657,8 @@
     <section class="wrap contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-shell">
         <div class="contact-copy">
-          <h2 id="contact-title">Let’s make your business impossible to scroll past.</h2>
-          <p>Choose the kind of project and share the basics. Your email app will open with a ready-to-send inquiry.</p>
+          <h2 id="contact-title">Hand off the creative. Get back to business.</h2>
+          <p>Tell me what you need — video, photography, a website, or the whole package — and I’ll take it from there. Your email app will open with a ready-to-send inquiry.</p>
           <div class="contact-links">
             <a class="email-link" href="tel:+18478926113">(847) 892-6113</a>
             <a class="email-link" href="mailto:bwprojectphotography@gmail.com" target="_blank" rel="noopener">bwprojectphotography@gmail.com</a>
@@ -1640,15 +1669,16 @@
             <label for="project-type">What do you need?</label>
             <select id="project-type">
               <option>Video advertising / campaign</option>
-              <option>Small business promo / content</option>
-              <option>Real estate photography</option>
+              <option>Photography</option>
+              <option>Website design + build</option>
               <option>Real estate photo + video</option>
+              <option>Video, photo + website — the whole package</option>
               <option>Something else</option>
             </select>
           </div>
           <div class="field">
             <label for="project-details">Project details</label>
-            <textarea id="project-details" placeholder="Location, ideal date, campaign or listing details, and where the content will run…"></textarea>
+            <textarea id="project-details" placeholder="Location, ideal date, and the basics — a listing, a launch, a new website…"></textarea>
           </div>
           <a class="btn" id="email-inquiry-link" href="mailto:bwprojectphotography@gmail.com" target="_blank" rel="noopener" aria-describedby="form-note">Start an inquiry <span aria-hidden="true">↗</span></a>
           <p class="note" id="form-note">Opens a ready-to-send draft outside this page. No form data is stored.</p>
@@ -1659,7 +1689,7 @@
 
   <footer>
     <div class="wrap footer-row">
-      <span>Project.01 — video advertising &amp; marketing for Chicago small businesses and real estate.</span>
+      <span>Project.01 — video, photo &amp; websites for Chicago small businesses and real estate.</span>
       <a href="tel:+18478926113">(847) 892-6113</a>
       <a href="mailto:bwprojectphotography@gmail.com" target="_blank" rel="noopener">bwprojectphotography@gmail.com</a>
     </div>
