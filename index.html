@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#131313" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#101011" />
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1234,6 +1233,196 @@
       .hero { padding: 54px 0 48px; }
     }
   </style>
+  <style>
+    /* Portfolio — project tiles, one per business or client */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 2.5vw, 26px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .project-tile {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      overflow: hidden;
+    }
+    .tile-visual {
+      display: flex;
+      flex-direction: column;
+      aspect-ratio: 16 / 10;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .browser-bar span { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+    .browser-bar span:first-child { background: var(--accent); }
+    .browser-bar em {
+      margin-left: 8px;
+      padding: 2px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .66rem;
+      font-style: normal;
+      font-weight: 600;
+    }
+    .browser-body { padding: clamp(16px, 2vw, 24px); }
+    .browser-mark { font-size: .95rem; font-weight: 700; letter-spacing: -.03em; }
+    .browser-mark span { color: var(--accent); }
+    .browser-head {
+      margin: 12px 0 16px;
+      font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+      font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -.025em;
+    }
+    .browser-head i { color: var(--accent); font-style: normal; }
+    .browser-btn {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: .66rem;
+      font-weight: 700;
+    }
+    .tile-body { display: flex; flex: 1; flex-direction: column; gap: 10px; padding: 20px 22px 22px; }
+    .tile-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    .tile-status { color: var(--accent); }
+    .tile-body h3 {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.32rem;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -.02em;
+    }
+    .tile-body p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.6; }
+    .tile-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 0; padding: 0; list-style: none; }
+    .tile-tags li {
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .tile-facts { margin: auto 0 0; padding-top: 8px; }
+    .tile-facts div {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 7px 0;
+      border-top: 1px solid var(--line);
+      font-size: .8rem;
+    }
+    .tile-facts dt { color: var(--muted); }
+    .tile-facts dd { margin: 0; font-weight: 700; text-align: right; }
+    .tile-link { margin-top: 14px; font-size: .84rem; font-weight: 700; text-underline-offset: 4px; }
+    .tile-link:hover, .tile-link:focus-visible { color: var(--accent); }
+    .project-slot {
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 340px;
+      padding: 24px;
+      border-style: dashed;
+      color: var(--muted);
+      text-align: center;
+    }
+    .slot-plus { color: var(--accent); font-size: 1.7rem; font-weight: 700; line-height: 1; }
+    .project-slot strong {
+      color: var(--ink);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      text-transform: none;
+    }
+    .project-slot span { max-width: 250px; font-size: .84rem; line-height: 1.55; }
+    /* Guadalupe Clean Co tile — real screenshot of the live site.
+       The browser-bar dot uses the site's orange accent instead. */
+    .tile-visual--guadalupe .browser-bar span:first-child { background: var(--accent); }
+    /* Portfolio heading sits directly on the page background — no band
+       behind it, so the dot field shows through. */
+    .portfolio-page .about-band { background: transparent; border-bottom: 0; }
+    .guad-screenshot {
+      display: block;
+      flex: 1;
+      width: 100%;
+      min-height: 0;
+      object-fit: cover;
+      object-position: top center;
+    }
+    @media (max-width: 1020px) {
+      .project-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 620px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .project-slot { min-height: 220px; }
+    }
+  </style>
+  <style>
+    /* Dark only — the site no longer follows the device light/dark
+       setting. Darker grey palette across every surface: page
+       background, cards, bands, tiles and form fields. This block is
+       last so it wins over every earlier light/dark definition. */
+    :root {
+      color-scheme: dark;
+      --paper: #101011;
+      --ink: #f2f2ee;
+      --muted: #b8b8b2;
+      --line: #2c2c2f;
+      --panel: #1a1a1c;
+      --accent: #F34C19;
+      --acid: #1a1a1c;
+      --white: #ffffff;
+      --shadow: rgba(0, 0, 0, .6);
+    }
+    html { color-scheme: dark; background: #101011; }
+    body { background: var(--paper); color: var(--ink); }
+    .btn { background: var(--ink); color: #101011; border-color: var(--ink); }
+    .btn:hover, .btn:focus-visible { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+    .btn.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+    .btn.secondary:hover, .btn.secondary:focus-visible { background: var(--panel); color: var(--ink); border-color: var(--ink); }
+    .inquiry .btn { background: var(--ink); color: #101011; border-color: var(--ink); }
+    .inquiry .btn:hover, .inquiry .btn:focus-visible { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+    .field select, .field textarea { background: #0a0a0b; color: var(--ink); border-color: var(--line); }
+    .contact-shell { background: var(--panel); border-color: var(--line); }
+    .about-band { background: var(--panel); }
+    .portfolio-page .about-band { background: transparent; }
+    .project-tile, .slot, .tile-visual { background: var(--panel); }
+    .browser-btn { background: var(--ink); color: #101011; }
+    footer { background: transparent; }
+    /* Inverted bands stay dark too — no light strips in dark-only mode */
+    .marquee { background: #080809; color: var(--ink); border-color: var(--line); }
+    .process { background: #080809; color: var(--ink); border-color: var(--line); }
+    .process .section-head { border-color: var(--line); }
+    .process-grid { border-color: var(--line); }
+    .step { border-color: var(--line); }
+    .step p { color: var(--muted); }
+    /* Portfolio page title in the site accent color */
+    #portfolio-title { color: var(--accent); }
+  </style>
 </head>
 <body>
   <canvas id="dot-field" aria-hidden="true"></canvas>
@@ -1243,6 +1432,7 @@
       <div class="availability"><span class="dot" aria-hidden="true"></span>Available for new projects</div>
       <nav aria-label="Primary navigation">
         <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1275,6 +1465,7 @@
         <li><span class="frame frame-1610 audience-photo"><img src="assets/warm-restaurant-dining-room-with-wooden-tables-set-for-service-by-tall-windows.jpg" alt="Warm restaurant dining room with wooden tables set for service by tall windows" width="1200" height="800" loading="lazy" /></span><strong>Food &amp; drink</strong><span>Restaurants, cafés and bakeries with something worth showing off.</span></li>
         <li><span class="frame frame-1610 audience-photo"><img src="assets/barbershop-interior-with-exposed-brick-mirrors-and-vintage-barber-chairs.jpg" alt="Barbershop interior with exposed brick, mirrors and vintage barber chairs" width="1200" height="801" loading="lazy" /></span><strong>Salons &amp; studios</strong><span>Barbers, salons and wellness spaces growing a local following.</span></li>
         <li><strong>Local services</strong><span>Owner-run service businesses that live on reputation and word of mouth.</span></li>
+        <li><strong>Custom work</strong><span>Menu design, logo design, business cards, flyers and social media graphics — designed to match your brand.</span></li>
       </ul>
     </section>
 
@@ -1368,7 +1559,6 @@
         </div>
       </div>
       <div class="about-cta">
-        <a class="btn" href="#contact">Start a project</a>
         <a class="btn secondary" href="#home">Back to home</a>
       </div>
       </div>
@@ -1380,60 +1570,55 @@
       <div class="about-band">
         <div class="wrap">
           <a class="back-link" href="#home"><span aria-hidden="true">←</span> Back to home</a>
-          <div class="section-index">Portfolio</div>
-          <h2 id="portfolio-title">Selected work.</h2>
+          <h2 id="portfolio-title">Portfolio</h2>
         </div>
       </div>
       <div class="wrap section about-body">
-        <p class="portfolio-intro">Project.01 is just getting started, so this page is a framework for what's coming: as client projects land, the real work — photos, video, and campaigns — will fill these sections.</p>
-
-        <div class="portfolio-group">
-          <div class="portfolio-group-head">
-            <div class="section-index">Real estate</div>
-            <div>
-              <h3>Real estate</h3>
-              <p>Selected work goes here — listing photo and video projects are coming soon.</p>
+        <ul class="project-grid">
+          <li class="project-tile">
+            <div class="tile-visual tile-visual--guadalupe">
+              <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><em>guadalupe-clean-co</em></div>
+              <img class="guad-screenshot" src="assets/screenshot-of-the-guadalupe-clean-co-website-homepage-a-home-that-sparkles-over-a-pink-picnic-gingham-background-with-the-call-button-and-flat-rate-prices-button.jpg" alt="Screenshot of the Guadalupe Clean Co website homepage — “A home that sparkles” over a pink picnic gingham background, with the call button and flat-rate prices button" width="1905" height="870" loading="lazy">
             </div>
-          </div>
-          <ul class="slot-grid">
-            <li class="slot"><strong>Placeholder</strong><span>Project slot — reserved for a future real estate project.</span></li>
-            <li class="slot"><strong>Placeholder</strong><span>Project slot — reserved for a future real estate project.</span></li>
-            <li class="slot"><strong>Placeholder</strong><span>Project slot — reserved for a future real estate project.</span></li>
-          </ul>
-        </div>
-
-        <div class="portfolio-group">
-          <div class="portfolio-group-head">
-            <div class="section-index">Product &amp; small business</div>
-            <div>
-              <h3>Product &amp; small business</h3>
-              <p>Selected work goes here — product and small business projects are coming soon.</p>
+            <div class="tile-body">
+              <div class="tile-meta"><span>Website</span><span class="tile-status">Live</span></div>
+              <h3>Guadalupe Clean Co</h3>
+              <ul class="tile-tags">
+                <li>Web design</li>
+                <li>Build</li>
+                <li>Copywriting</li>
+              </ul>
+              <dl class="tile-facts">
+                <div><dt>Client</dt><dd>Guadalupe Clean Co</dd></div>
+                <div><dt>Type</dt><dd>Cleaning service website</dd></div>
+                <div><dt>Area</dt><dd>South Loop → Evanston</dd></div>
+              </dl>
+              <a class="tile-link" href="https://bwprojectphotography-cloud.github.io/guadalupe-clean-co/" target="_blank" rel="noopener">Visit the live site <span aria-hidden="true">→</span></a>
             </div>
-          </div>
-          <ul class="slot-grid">
-            <li class="slot"><strong>Placeholder</strong><span>Project slot — reserved for a future product or small business project.</span></li>
-            <li class="slot"><strong>Placeholder</strong><span>Project slot — reserved for a future product or small business project.</span></li>
-            <li class="slot"><strong>Placeholder</strong><span>Project slot — reserved for a future product or small business project.</span></li>
-          </ul>
-        </div>
-
-        <div class="portfolio-group last">
-          <div class="portfolio-group-head">
-            <div class="section-index">Advertising</div>
-            <div>
-              <h3>Advertising</h3>
-              <p>Selected work goes here — advertising and campaign projects are coming soon.</p>
-            </div>
-          </div>
-          <ul class="slot-grid">
-            <li class="slot"><strong>Placeholder</strong><span>Project slot — reserved for a future advertising project.</span></li>
-            <li class="slot"><strong>Placeholder</strong><span>Project slot — reserved for a future advertising project.</span></li>
-            <li class="slot"><strong>Placeholder</strong><span>Project slot — reserved for a future advertising project.</span></li>
-          </ul>
-        </div>
+          </li>
+          <li class="project-tile project-slot">
+            <span class="slot-plus" aria-hidden="true">+</span>
+            <strong>Project.02</strong>
+          </li>
+          <li class="project-tile project-slot">
+            <span class="slot-plus" aria-hidden="true">+</span>
+            <strong>Project.03</strong>
+          </li>
+          <li class="project-tile project-slot">
+            <span class="slot-plus" aria-hidden="true">+</span>
+            <strong>Project.04</strong>
+          </li>
+          <li class="project-tile project-slot">
+            <span class="slot-plus" aria-hidden="true">+</span>
+            <strong>Project.05</strong>
+          </li>
+          <li class="project-tile project-slot">
+            <span class="slot-plus" aria-hidden="true">+</span>
+            <strong>Project.06</strong>
+          </li>
+        </ul>
 
         <div class="portfolio-cta">
-          <a class="btn" href="#contact">Start a project</a>
           <a class="btn secondary" href="#home">Back to home</a>
         </div>
       </div>
@@ -1530,6 +1715,15 @@
         window.scrollTo(0, 0);
       }
 
+      function showPortfolio() {
+        home.hidden = true;
+        contact.hidden = true;
+        about.hidden = true;
+        portfolio.hidden = false;
+        document.title = 'Portfolio — Project.01';
+        window.scrollTo(0, 0);
+      }
+
       function showHome(targetId) {
         about.hidden = true;
         portfolio.hidden = true;
@@ -1546,6 +1740,7 @@
       function route() {
         var h = window.location.hash;
         if (h === '#about') { showAbout(); }
+        else if (h === '#portfolio') { showPortfolio(); }
         else if (h === '#services') { showHome('services'); }
         else if (h === '#contact') { showHome('contact'); }
         else { showHome(null); }
